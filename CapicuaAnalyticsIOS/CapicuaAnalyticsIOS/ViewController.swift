@@ -9,17 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet var numero:UITextField!;
+    @IBOutlet var resultado:UILabel!;
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func CapicuaAnalytics() {
+        let num :Int = Int(numero.text!)!;
+    
+        let array = Array(String(num).characters);
+        
+        if(array == array.reverse()){
+            
+            resultado.text = "O numero \(num) é Capicua";
+        }else {
+           resultado.text = "O numero \(num) não é Capicua";
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 
